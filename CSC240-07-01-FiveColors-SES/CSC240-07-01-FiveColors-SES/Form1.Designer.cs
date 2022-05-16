@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UxTitleLabel = new System.Windows.Forms.Label();
             this.UxManualLabel = new System.Windows.Forms.Label();
             this.UxBlueRadioButton = new System.Windows.Forms.RadioButton();
@@ -35,6 +36,8 @@
             this.UxPurpleRadioButton = new System.Windows.Forms.RadioButton();
             this.UxYellowRadioButton = new System.Windows.Forms.RadioButton();
             this.UxGreenRadioButton = new System.Windows.Forms.RadioButton();
+            this.UxColorButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UxTitleLabel
@@ -113,11 +116,27 @@
             this.UxGreenRadioButton.Text = "<-- Green";
             this.UxGreenRadioButton.UseVisualStyleBackColor = true;
             // 
+            // UxColorButton
+            // 
+            this.UxColorButton.Location = new System.Drawing.Point(199, 285);
+            this.UxColorButton.Name = "UxColorButton";
+            this.UxColorButton.Size = new System.Drawing.Size(325, 84);
+            this.UxColorButton.TabIndex = 7;
+            this.UxColorButton.Text = "Press Here For Random Background";
+            this.UxColorButton.UseVisualStyleBackColor = true;
+            this.UxColorButton.Click += new System.EventHandler(this.UxColorButton_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UxColorButton);
             this.Controls.Add(this.UxGreenRadioButton);
             this.Controls.Add(this.UxYellowRadioButton);
             this.Controls.Add(this.UxPurpleRadioButton);
@@ -142,5 +161,7 @@
         private RadioButton UxPurpleRadioButton;
         private RadioButton UxYellowRadioButton;
         private RadioButton UxGreenRadioButton;
+        private Button UxColorButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
