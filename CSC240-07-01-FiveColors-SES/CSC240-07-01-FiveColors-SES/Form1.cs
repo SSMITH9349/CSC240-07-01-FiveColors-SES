@@ -34,7 +34,17 @@ namespace CSC240_07_01_FiveColors_SES
 
         private void UxColorButton_Click(object sender, EventArgs e)
         {
-            
+            if (timer1.Enabled == false)
+            {
+                UxColorButton.Text = "Start";
+                timer1.Start();
+            }
+            else
+            {
+                UxColorButton.Text = "Stop";
+                timer1.Stop();
+
+            }
 
         }
         public static class check
@@ -46,10 +56,10 @@ namespace CSC240_07_01_FiveColors_SES
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Random Color = new Random();
-            check.R = Color.Next(0, 256);
-            check.G = Color.Next(0, 256);
-            check.B = Color.Next(0, 256);
+            Random color = new Random();
+            check.R = color.Next(0, 256);
+            check.G = color.Next(0, 256);
+            check.B = color.Next(0, 256);
             this.BackColor = Color.FromArgb(check.R, check.G, check.B);
         }
     }
